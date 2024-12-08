@@ -1,15 +1,29 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
   return (
     <div className="flex items-center justify-center py-24">
       <div className="w-full max-w-sm p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+        <h1 className="text-2xl font-bold text-center">Sign In</h1>
         <form noValidate="" action="" className="space-y-6">
+          <div className="space-y-1 text-sm">
+            <label htmlFor="name" className="block dark:text-gray-600">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              fdprocessedid="wo0p45"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div className="space-y-1 text-sm">
             <label htmlFor="email" className="block dark:text-gray-600">
               Email
@@ -38,11 +52,11 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <div className="flex justify-end text-xs dark:text-gray-600">
+            {/* <div className="flex justify-end text-xs dark:text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
               </a>
-            </div>
+            </div> */}
           </div>
           <button
             type="submit"
@@ -101,13 +115,13 @@ const Login = () => {
           </button>
         </div>
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
-          Don't have an account?
+          Already have an account?
           <a
             rel="noopener noreferrer"
-            href="/sign-in"
-            className="underline dark:text-gray-800"
+            href="/login"
+            className="underline dark:text-gray-800 ml-2"
           >
-            Sign up
+            Log in !
           </a>
         </p>
       </div>
@@ -115,4 +129,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
