@@ -1,15 +1,35 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post(backendUrl + "/sigin", { name, email, password })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="flex items-center justify-center py-24">
       <div className="w-full max-w-sm p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Sign In</h1>
-        <form noValidate="" action="" className="space-y-6">
+        <form
+          noValidate=""
+          action=""
+          onSubmit={handleSubmit}
+          className="space-y-6"
+        >
           <div className="space-y-1 text-sm">
             <label htmlFor="name" className="block dark:text-gray-600">
               Name
