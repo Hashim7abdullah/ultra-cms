@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
     <div className="flex items-center justify-center py-24">
       <div className="w-full max-w-sm p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form noValidate="" action="" className="space-y-6">
           <div className="space-y-1 text-sm">
-            <label htmlFor="username" className="block dark:text-gray-600">
-              Username
+            <label htmlFor="email" className="block dark:text-gray-600">
+              Email
             </label>
             <input
               type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
+              name="email"
+              id="email"
+              placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               fdprocessedid="wo0p45"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="space-y-1 text-sm">
@@ -30,7 +35,9 @@ const Login = () => {
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
               fdprocessedid="o0ieu8"
+              onChange={(e) => setPassword(e.target.value)}
             />
+
             <div className="flex justify-end text-xs dark:text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
@@ -38,6 +45,7 @@ const Login = () => {
             </div>
           </div>
           <button
+            type="submit"
             className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
             fdprocessedid="vcmeo4"
           >
@@ -96,7 +104,7 @@ const Login = () => {
           Don't have an account?
           <a
             rel="noopener noreferrer"
-            href="#"
+            href="/sign-in"
             className="underline dark:text-gray-800"
           >
             Sign up
