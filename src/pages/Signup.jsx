@@ -3,21 +3,26 @@ import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       axios
-        .post(backendUrl + "/api/user/sign-in", { name, email, password })
+        .post(backendUrl + "/api/user/sign-in", {
+          email,
+          password,
+          name,
+        })
         .then((response) => {
           console.log(response);
         });
     } catch (error) {
-      console.log(err);
+      console.log(error);
     }
   };
 
@@ -28,8 +33,8 @@ const Signup = () => {
         <form
           noValidate=""
           action=""
-          onSubmit={handleSubmit}
           className="space-y-6"
+          onSubmit={handleSubmit}
         >
           <div className="space-y-1 text-sm">
             <label htmlFor="name" className="block dark:text-gray-600">
