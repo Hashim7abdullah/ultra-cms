@@ -10,14 +10,15 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post(backendUrl + "/sigin", { name, email, password })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      axios
+        .post(backendUrl + "/api/user/sign-in", { name, email, password })
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.log(err);
+    }
   };
 
   return (
