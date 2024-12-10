@@ -83,12 +83,6 @@ const Signup = () => {
               fdprocessedid="o0ieu8"
               onChange={(e) => setPassword(e.target.value)}
             />
-
-            {/* <div className="flex justify-end text-xs dark:text-gray-600">
-              <a rel="noopener noreferrer" href="#">
-                Forgot Password?
-              </a>
-            </div> */}
           </div>
           <button
             type="submit"

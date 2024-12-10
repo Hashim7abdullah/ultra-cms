@@ -70,7 +70,7 @@ const Login = () => {
             />
 
             <div className="flex justify-end text-xs dark:text-gray-600">
-              <a rel="noopener noreferrer" href="#">
+              <a rel="noopener noreferrer" href="/forgot-password">
                 Forgot Password?
               </a>
             </div>

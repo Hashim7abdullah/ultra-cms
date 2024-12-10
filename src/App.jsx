@@ -14,6 +14,7 @@ const VarientSectionPage = lazy(() => import("./pages/Main/VarientsSection"));
 const AboutUsSectionsPage = lazy(() => import("./pages/Main/AboutUsSections"));
 const Login = lazy(() => import("./pages/Login"));
 const Signin = lazy(() => import("./pages/Signup"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 
 // Loading Spinner Component
 const LoadingSpinner = () => (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-in" element={<Signin />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/home-page" element={<HomePage />} />
             <Route path="/launch" element={<LaunchPage />} />
             <Route path="/main" element={<MainPage />} />
