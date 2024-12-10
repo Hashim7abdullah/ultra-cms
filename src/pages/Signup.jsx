@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       axios
-        .post(backendUrl + "/api/user/sign-in", {
+        .post(backendUrl + "/api/user/login", {
           email,
           password,
-          name,
         })
         .then((response) => {
-          console.log(response);
+          if (response.data.success) {
+            navigate("/");
+          } else {
+            console.error(response.data.message);
+            alert(response.data.message);
+          }
         });
     } catch (error) {
       console.log(error);
