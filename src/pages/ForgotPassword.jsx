@@ -21,7 +21,7 @@ const ForgotPassword = () => {
           console.log(response);
 
           if (response.data.success) {
-            navigate("/login");
+            alert("Check your email for password reset link");
           }
         });
     } catch (error) {
