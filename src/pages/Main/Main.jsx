@@ -155,7 +155,7 @@ const Main = () => {
           y: 0,
           transition: {
             duration: 1,
-            delay: 0.5,
+            delay: 1,
           },
         },
         className: "col-span-1 row-span-2  p-5 rounded-xl",

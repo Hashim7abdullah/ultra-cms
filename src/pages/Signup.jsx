@@ -15,13 +15,14 @@ const Signup = () => {
     e.preventDefault();
     try {
       axios
-        .post(backendUrl + "/api/user/login", {
+        .post(backendUrl + "/api/user/sign-in", {
+          name,
           email,
           password,
         })
         .then((response) => {
           if (response.data.success) {
-            navigate("/");
+            navigate("/login");
           } else {
             console.error(response.data.message);
             alert(response.data.message);
