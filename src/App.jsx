@@ -12,10 +12,10 @@ const MainPage = lazy(() => import("./pages/Main/Main"));
 const VarientsPage = lazy(() => import("./pages/Varients"));
 const VarientSectionPage = lazy(() => import("./pages/Main/VarientsSection"));
 const AboutUsSectionsPage = lazy(() => import("./pages/Main/AboutUsSections"));
-const Login = lazy(() => import("./pages/Login"));
-const Signin = lazy(() => import("./pages/Signup"));
-const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
-const ResetPassword = lazy(() => import("./pages/ResetPassword"));
+const Login = lazy(() => import("./pages//LoginUser/Login"));
+const Signin = lazy(() => import("./pages/LoginUser/Signup"));
+const ForgotPassword = lazy(() => import("./pages/LoginUser/ForgotPassword"));
+const ResetPassword = lazy(() => import("./pages/LoginUser/ResetPassword"));
 
 // Loading Spinner Component
 const LoadingSpinner = () => (

@@ -1,13 +1,35 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Hero from "../assets/file.png";
 import Button from "../components/Button";
 import { FaRocket } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LaunchPage = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+  // Check authentication status when component mounts
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await axios.get(`${backendUrl}/api/auth/check-auth`, {
+          withCredentials: true
+        });
+        
+        if (response.data.success) {
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    };
+
+    checkAuth();
+  }, [backendUrl]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -19,7 +41,11 @@ const LaunchPage = () => {
   const canOpacity = useTransform(scrollYProgress, [0, 1], [1, 1]);
 
   const handleNavigate = () => {
-    navigate("/main");
+    if (isAuthenticated) {
+      navigate("/main");
+    } else {
+      navigate("/");
+    }
   };
 
   return (

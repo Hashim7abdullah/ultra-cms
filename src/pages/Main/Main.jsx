@@ -5,6 +5,7 @@ import File from "../../assets/Main/file.jpg";
 import Button from "../../components/Button";
 import image from "../../assets/Main/file1.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AnimatedText = React.memo(() => {
   const controls = useAnimation();
@@ -66,6 +67,25 @@ const Main = () => {
   const [isLaunched, setIsLaunched] = useState(false);
 
   const navigate = useNavigate();
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+    axios
+      .get(`${backendUrl}/api/auth/main`)
+      .then((response) => {
+        if (response.data.success) {
+          // User is authenticated, do nothing
+        } else {
+          // Redirect to login page if not authenticated
+          navigate("/");
+        }
+      })
+      .catch(() => {
+        // Redirect to login page if request fails
+        navigate("/");
+      });
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
