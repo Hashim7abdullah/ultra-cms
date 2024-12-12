@@ -338,7 +338,7 @@ const Main = () => {
         content: (
           <div className="w-full h-full flex flex-col justify-center items-center text-center text-black">
             <p className="italic mb-2 text-base md:text-lg lg:text-xl">
-              "Energy beyond limits"
+              Energy Beyond Limits
             </p>
             <p className="font-semibold">- Hashim Abdullah, CEO of ULTRA</p>
           </div>
