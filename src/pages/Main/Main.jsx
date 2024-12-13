@@ -12,19 +12,19 @@ const AnimatedText = React.memo(() => {
 
   useEffect(() => {
     let isMounted = true;
-    const animateText = async () => {
-      while (isMounted) {
-        await controls.start({
-          x: "-100%",
-          transition: {
-            duration: 50,
-            ease: "linear",
-          },
-        });
 
-        if (isMounted) {
-          controls.set({ x: "100%" });
-        }
+    const animateText = async () => {
+      await controls.start({
+        x: "-100%",
+        transition: {
+          duration: 50,
+          ease: "linear",
+        },
+      });
+
+      if (isMounted) {
+        controls.set({ x: "100%" });
+        animateText(); // Recursively call for continuous animation
       }
     };
 
@@ -62,6 +62,7 @@ const AnimatedText = React.memo(() => {
     </motion.div>
   );
 });
+
 
 const Main = () => {
   const [isLaunched, setIsLaunched] = useState(false);

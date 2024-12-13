@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import  { useState } from "react";
 import axios from "axios";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
-  const navigate = useNavigate();
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   axios.defaults.withCredentials = true;
@@ -49,7 +47,6 @@ const ForgotPassword = () => {
               id="email"
               placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="wo0p45"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -57,7 +54,6 @@ const ForgotPassword = () => {
           <button
             type="submit"
             className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
-            fdprocessedid="vcmeo4"
           >
             Send
           </button>

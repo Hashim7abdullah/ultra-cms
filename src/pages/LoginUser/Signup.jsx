@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -53,7 +53,6 @@ const Signup = () => {
               id="name"
               placeholder="Name"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="wo0p45"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -67,7 +66,6 @@ const Signup = () => {
               id="email"
               placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="wo0p45"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -81,14 +79,12 @@ const Signup = () => {
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="o0ieu8"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
             type="submit"
             className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
-            fdprocessedid="vcmeo4"
           >
             Sign in
           </button>
@@ -104,7 +100,6 @@ const Signup = () => {
           <button
             aria-label="Log in with Google"
             className="p-3 rounded-sm"
-            fdprocessedid="hy28u"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +112,6 @@ const Signup = () => {
           <button
             aria-label="Log in with Twitter"
             className="p-3 rounded-sm"
-            fdprocessedid="leyizl"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +124,6 @@ const Signup = () => {
           <button
             aria-label="Log in with GitHub"
             className="p-3 rounded-sm"
-            fdprocessedid="6wbpzn"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
