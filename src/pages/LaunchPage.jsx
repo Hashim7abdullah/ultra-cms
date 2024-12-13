@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Hero from "../assets/file.png";
 import Button from "../components/Button";
@@ -17,13 +17,15 @@ const LaunchPage = () => {
     const checkAuth = async () => {
       try {
         const response = await axios.get(`${backendUrl}/api/auth/check-auth`, {
-          withCredentials: true
+          withCredentials: true,
         });
-        
+
         if (response.data.success) {
           setIsAuthenticated(true);
         }
       } catch (error) {
+        console.log(error);
+
         setIsAuthenticated(false);
       }
     };

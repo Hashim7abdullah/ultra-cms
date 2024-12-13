@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import  { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import red1 from "../../assets/Animate/red.jpg"
 import black1 from "../../assets/Animate/Sugarfree.jpg"

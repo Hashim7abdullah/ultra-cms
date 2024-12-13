@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -51,7 +51,6 @@ const Login = () => {
               id="email"
               placeholder="Email"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="wo0p45"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -65,7 +64,6 @@ const Login = () => {
               id="password"
               placeholder="Password"
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
-              fdprocessedid="o0ieu8"
               onChange={(e) => setPassword(e.target.value)}
             />
 
@@ -78,7 +76,6 @@ const Login = () => {
           <button
             type="submit"
             className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600"
-            fdprocessedid="vcmeo4"
           >
             Sign in
           </button>
@@ -94,7 +91,6 @@ const Login = () => {
           <button
             aria-label="Log in with Google"
             className="p-3 rounded-sm"
-            fdprocessedid="hy28u"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +103,6 @@ const Login = () => {
           <button
             aria-label="Log in with Twitter"
             className="p-3 rounded-sm"
-            fdprocessedid="leyizl"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +114,7 @@ const Login = () => {
           </button>
         </div>
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
-          Don't have an account?
+          Dont have an account?
           <a
             rel="noopener noreferrer"
             href="/sign-in"

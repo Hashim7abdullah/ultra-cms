@@ -1,6 +1,5 @@
-import React, { useRef, useMemo, useCallback, Suspense } from "react";
+import React, { useRef, useMemo, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import REDcola from "../assets/Animate/new.jpg";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
